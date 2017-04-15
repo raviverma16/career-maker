@@ -1,0 +1,76 @@
+/*
+SQLyog Community Edition- MySQL GUI v6.07
+Host - 5.0.37-community-nt : Database - ovs
+*********************************************************************
+Server version : 5.0.37-community-nt
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+create database if not exists `ovs`;
+
+USE `ovs`;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+/*Table structure for table `admin` */
+
+DROP TABLE IF EXISTS `admin`;
+
+CREATE TABLE `admin` (
+  `aid` varchar(30) default NULL,
+  `apass` varchar(30) default NULL,
+  `status` int(11) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `admin` */
+
+insert  into `admin`(`aid`,`apass`,`status`) values ('Admin','Admin',0);
+
+/*Table structure for table `candidate` */
+
+DROP TABLE IF EXISTS `candidate`;
+
+CREATE TABLE `candidate` (
+  `usn` varchar(30) NOT NULL,
+  `nov` int(11) default NULL,
+  PRIMARY KEY  (`usn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `candidate` */
+
+/*Table structure for table `registration` */
+
+DROP TABLE IF EXISTS `registration`;
+
+CREATE TABLE `registration` (
+  `usn` varchar(15) NOT NULL,
+  `passwd` varchar(50) default NULL,
+  `name` varchar(30) default NULL,
+  `branch` varchar(30) default NULL,
+  `year` varchar(30) default NULL,
+  `otp` varchar(30) default NULL,
+  PRIMARY KEY  (`usn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `registration` */
+
+insert  into `registration`(`usn`,`passwd`,`name`,`branch`,`year`,`otp`) values ('1SI','','','','','8522'),('1SI14CS412','Manjunath','Manjunath','CSE','Third Year','8664');
+
+/*Table structure for table `userstatus` */
+
+DROP TABLE IF EXISTS `userstatus`;
+
+CREATE TABLE `userstatus` (
+  `usn` varchar(30) NOT NULL,
+  `status` int(11) default NULL,
+  PRIMARY KEY  (`usn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `userstatus` */
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
